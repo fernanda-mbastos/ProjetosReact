@@ -1,5 +1,5 @@
 function NovoProjeto() {
-  return <h1>Projetos</h1>
+  return <h1>NovoProjeto</h1>
 }
 
-export default NovoProjeto;
+export default NovoProjeto
