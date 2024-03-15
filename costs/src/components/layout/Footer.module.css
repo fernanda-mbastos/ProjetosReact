@@ -1,7 +1,11 @@
 .footer {
+  margin: 0;
+  display: flex;
+  justify-content: center;
   background-color: var(--cor02);
   color: var(--cor01);
   text-align: center;
+  
 }
 
 .social_list {
@@ -24,7 +28,11 @@
   font-size: 1.5rem;
 }
 
+.copy {
+  margin-top: 0.5rem;
+}
 .copy span {
   color: var(--cor03);
 
 }
+

@@ -20,7 +20,7 @@
 
 .home_container p {
   margin-bottom: 1rem;
-  color: rgb(146, 144, 144)
+  color: var(--cor04);
 }
 
 .home_container img {

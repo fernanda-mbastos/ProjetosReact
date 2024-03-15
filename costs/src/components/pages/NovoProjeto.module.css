@@ -1,0 +1,13 @@
+.novoprojeto_container {
+  width: 550px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.novoprojeto_container h1 {
+  margin-bottom: 1rem;
+}
+
+.novoprojeto_container p {
+  color: var(--cor04);
+}
