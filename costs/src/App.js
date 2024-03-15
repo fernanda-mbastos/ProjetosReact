@@ -15,9 +15,9 @@ function App() {
       <Container customClass='min-height'>
         <Routes>        
           <Route exact path='/' element={<Home />} />
-          <Route path='/Empresa' element={<Empresa />} /> 
-          <Route path='/Contato' element={<Contato />} />   
           <Route path='/Projetos' element={<Projetos />} />
+          <Route path='/Empresa' element={<Empresa />} /> 
+          <Route path='/Contato' element={<Contato />} />         
         </Routes>
       </Container>
       <Footer />
