@@ -1,0 +1,103 @@
+{
+  "projects": [
+    {
+      "id": "be756163-6ac7-4d09-866c-9094ff42e07d",
+      "name": "teste",
+      "budget": "1333",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "46b6",
+      "name": "aaaa",
+      "budget": "5666",
+      "category": {
+        "id": "5",
+        "name": "Redes"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "fcce",
+      "name": "s",
+      "budget": "1",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "a045",
+      "name": "tes",
+      "budget": "-1",
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "ce79",
+      "name": "tes",
+      "budget": "22",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "264b",
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "e626",
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "5d91",
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "5e01",
+      "name": "a",
+      "budget": "1",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": []
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Infra"
+    },
+    {
+      "id": "2",
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": "3",
+      "name": "Design"
+    },
+    {
+      "id": "4",
+      "name": "Planejamento"
+    },
+    {
+      "id": "5",
+      "name": "Redes"
+    }
+  ]
+}

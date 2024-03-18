@@ -2,12 +2,13 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Home from './components/pages/Home'
 import Contato from './components/pages/Contato'
 import Empresa from './components/pages/Empresa'
-import Projetos from './components/pages/Projetos'
+import Projects from './components/pages/Projects'
+import NovoProjeto from './components/pages/NovoProjeto'
 
 import Container from './components/layout/Container'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
-import NovoProjeto from './components/pages/NovoProjeto'
+
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <Container customClass='min-height'>
         <Routes>        
           <Route exact path='/' element={<Home />} />
-          <Route path='/projetos' element={<Projetos />} />
+          <Route path='/projects' element={<Projects />} />
           <Route path='/empresa' element={<Empresa />} /> 
           <Route path='/contato' element={<Contato />} /> 
           <Route path='/novoprojeto' element={<NovoProjeto />} />        

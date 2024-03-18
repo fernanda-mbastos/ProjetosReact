@@ -9,7 +9,7 @@ function Navbar() {
   return(
     <nav className={styles.navbar}>
       <Container>
-      <Link to='/'><img src={logo} alt='Costes' /></Link>
+      <Link to='/'><img src={logo} alt='Costs' /></Link>
       <ul className={styles.list}>
         <li className={styles.item}><Link to='/'>Home</Link></li>
         <li className={styles.item}><Link to='/projetos'>Projetos</Link></li>
