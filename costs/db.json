@@ -12,12 +12,23 @@
       "services": []
     },
     {
-      "id": "5185",
-      "name": "teste3",
-      "budget": "123",
+      "id": "6e19",
+      "name": "teste2",
+      "budget": "1000",
       "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "17a9",
+      "name": "teste4",
+      "budget": "12",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
       },
       "cost": 0,
       "services": []

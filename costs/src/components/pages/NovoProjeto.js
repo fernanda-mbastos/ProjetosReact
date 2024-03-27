@@ -1,5 +1,4 @@
-import { useNavigate } from 'react-router-dom'
-//import { v4 as uuidv4 } from 'uuid'
+import { useNavigate } from 'react-router-dom' // redireciona as paginas quando da um POST
 
 import styles from './NovoProjeto.module.css'
 import ProjetoForm from '../projeto/ProjetoForm'
@@ -10,20 +9,19 @@ function NovoProjeto() {
 
   function createPost(project) {
 
-    // iniciando custo e servico
-    //project.id = uuidv4();
+    // iniciando custo e servico com algum valor 
     project.cost = 0;
     project.services = [];
 
     fetch('http://localhost:5000/projects', {
-      method: 'POST',
+      method: 'POST', // POST = envio de formulario
       headers: {
         'Content-type': 'application/json'
       },
-      body: JSON.stringify(project),
+      body: JSON.stringify(project), // manda os dados do projeto
     })
     .then((resp) => resp.json())
-    .then((data) => {
+    .then((data) => { // realiza o redirecionamento
       navigate("/projects", {state: { message: "Projeto criado com sucesso!" }});
     })
     .catch((err) => console.log(err))
@@ -33,7 +31,8 @@ function NovoProjeto() {
   return (
   <div className={styles.novoprojeto_container}>
     <h1>Criar Projeto</h1>
-    <p>Crise seu projeto para depois adicionar seus serviço.</p>
+    <p>Crie seu projeto para depois adicionar seus serviços.</p>
+    {/* envio o metodo por meio de props via o handleSubmit*/}
     <ProjetoForm handleSubmit={createPost} btnText='Criar projeto'/>
   </div>
   )

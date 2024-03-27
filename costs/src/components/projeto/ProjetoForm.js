@@ -7,7 +7,7 @@ import SubmitButton from '../form/SubmitButton'
 
 function ProjetoForm({ handleSubmit, btnText, projectData}) {
   const [categories, setCategories] = useState([])
-  const [project, setProject] = useState(projectData || {})
+  const [project, setProject] = useState(projectData || {}) // verificar os dados do projeto (recebe do componente pai, se eles "vem" ou nao, ai puxa um objeto vazio
 
   useEffect(() => {
     fetch('http://localhost:5000/categories', {
@@ -24,11 +24,11 @@ function ProjetoForm({ handleSubmit, btnText, projectData}) {
   }, [])
 
   const submit = (e) => {
-    e.preventDefault()
-    handleSubmit(project)
+    e.preventDefault() // nao permite que o formulario ser executado com page reloded e dps retorna a pagina, que eh o padrao do HTML
+    handleSubmit(project) // executa o metodo que for passado pela prop e passo o projeto cadastrado no formulario
   }
 
-  function handleChange(e) {
+  function handleChange(e) { // altera o nome e o obudget do projeto => faz um destructuring, e define o name como o valor passado
     setProject({...project, [e.target.name]: e.target.value })
   }
 
@@ -37,7 +37,7 @@ function ProjetoForm({ handleSubmit, btnText, projectData}) {
       ...project, 
       category: {
       id: e.target.value,
-      name: e.target.options[e.target.selectedIndex].text,
+      name: e.target.options[e.target.selectedIndex].text, // seleciona o indice da categoria e retorna o nome dela
     }
     })
   }
@@ -49,7 +49,7 @@ function ProjetoForm({ handleSubmit, btnText, projectData}) {
       text='Nome do projeto' 
       name='name' 
       placeholder='Insira o nome do projeto'
-      handleOnChange={handleChange} 
+      handleOnChange={handleChange} // metodo para "setar" o nome e budget => metodo dinamico para alterar o valor que queremos preencher 
       value={project.name ? project.name : ''}
       />
       <Input 
@@ -65,7 +65,7 @@ function ProjetoForm({ handleSubmit, btnText, projectData}) {
       text='Selecione a categoria'
       options={categories}
       handleOnChange={handleCategory} 
-      value={project.category ? project.category.id : ''}
+      value={project.category ? project.category.id : ''} // se nao selecionar uma categoria, retorna vazio para evitar bug no select (diferente dos inputs)
       />
      <SubmitButton text={btnText} />
     </form>

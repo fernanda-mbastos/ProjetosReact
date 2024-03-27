@@ -19,7 +19,7 @@
 }
 
 .details_container,
-.service_fomr_container {
+.service_form_container {
   border-bottom: 1px solid var(--cor04);
   margin-bottom: 1rem;
   padding-bottom: 1rem;

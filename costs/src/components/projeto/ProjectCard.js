@@ -1,8 +1,10 @@
+// componente que traz os projetos individualmente
+
 import { Link } from 'react-router-dom'
 
 import styles from './ProjectCard.module.css'
 
-import {BsPencil, BsFillTrashFill} from 'react-icons/bs'
+import {BsPencil, BsFillTrashFill} from 'react-icons/bs' // icones de editar e limpar
 
 function ProjectCard({ id, name, budget, category, handleRemove}) {
 
@@ -18,7 +20,7 @@ function ProjectCard({ id, name, budget, category, handleRemove}) {
         <span>Orçamento: </span>R$ {budget}
       </p>
       <p className={styles.category_text}>
-      <span className={`${styles[category.toLowerCase()]}`}></span> {category}
+        <span className={`${styles[category.toLowerCase()]}`}></span> {category} {/*span eh a bolinha colorida para cada category, altera a cor dinamicamente dependendo da catergoria*/}
       </p>
       <div className={styles.project_card_actions}>
         <Link to={`/project/${id}`}>
