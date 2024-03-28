@@ -16,6 +16,7 @@ function Projects() {
   const [projects, setProjects] = useState([])
   // state para controlar a aparicao do loading
   const [removeLoading, setRemoveLoading] = useState(false)
+  const [projectMessage, setProjectMessage] = useState('')
 
   const location = useLocation() // resgata a msg por meio do hook
   let message = ''
@@ -25,8 +26,9 @@ function Projects() {
 
   //request para buscar os projetos no banco, preenche o array iniciamente vazio
   useEffect(() => {
+    // setTimeout ficticio para atrasar o loading
     setTimeout(() => {
-      fetch('http://localhost:5000/projects',{
+      fetch('http://localhost:5000/projects',{ // requisição de fetch dentro do setTimeout
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -40,6 +42,7 @@ function Projects() {
     }, 500)
   }, [])
 
+  //funcao faz um request para deletar da API, acessa o ID na rota
   function removeProject(id) {
 
     fetch(`http://localhost:5000/projects/${id}`, {
@@ -48,8 +51,11 @@ function Projects() {
         'Content-type': 'application/json'
       },  
     }).then((resp) => resp.json())
-    .then(data => {
+    .then(() => {
+      // filter para deletar no front o id requisitado (so mantem os que forem diferente)
       setProjects(projects.filter((project) => project.id !== id))
+      setProjectMessage('Projeto deletado com sucesso!')
+
     })
     .catch((err) => console.log(err))
   }
@@ -62,6 +68,7 @@ function Projects() {
       </div>
     {/*codiciona a exibicao da msg dinamicamente, nesse caso sempre eh sucesso*/}
       {message && <Message type='sucess' msg={message} />}
+      {projectMessage && <Message type='sucess' msg={projectMessage} />}
       <Container customClass='start'>
         {/* cria os cards dinamicamente, comeca com uma condicao se existe ou nao projeto. Faz um map em cima dos projetos e transforma os dados em um project. Retorna um oabjeto em jSX, entao usa () */}
         {projects.length > 0  &&
@@ -72,10 +79,11 @@ function Projects() {
               budget={project.budget}
               category={project.category.name}
               key={project.id} // necessario key unica pois esta se repetindo no map
-              handleRemove={removeProject}
+              handleRemove={removeProject} // manda a função com props
             />
           ))}
          {!removeLoading && <Loading />}
+         {/*quando nao houver projetos e o louder ja estiver sido removido*/}
          {removeLoading && projects.length === 0 && (
           <p>Não há projetos cadastrados</p>
          )}

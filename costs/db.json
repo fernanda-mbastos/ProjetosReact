@@ -2,22 +2,11 @@
   "projects": [
     {
       "id": "1057",
-      "name": "teste",
-      "budget": "1000",
+      "name": "teste atualizado1",
+      "budget": "130021",
       "category": {
         "id": "3",
-        "name": "design"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "6e19",
-      "name": "teste2",
-      "budget": "1000",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
+        "name": "Design"
       },
       "cost": 0,
       "services": []
@@ -45,7 +34,7 @@
     },
     {
       "id": "3",
-      "name": "design"
+      "name": "Design"
     },
     {
       "id": "4",
